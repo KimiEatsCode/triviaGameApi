@@ -1,7 +1,7 @@
 {
   "name": "codejeo",
   "version": "1.0.0",
-  "description": "Web app to practice code questions and programming concepts",
+  "description": "Web App with trivia games on various topics including coding and more",
   "main": "index.js",
   "type": "module",
   "scripts": {
