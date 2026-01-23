@@ -6,7 +6,7 @@ dotenv.config({ path: "./config.env" });
 // dotenv.config();
 
 const env_vars = {
-  // apiUrl: "https://codejeopardy-api.onrender.com"
+  // apiUrl: "https://codejeopardy-api-service-pjoy.vercel.app/"
   apiUrl: "localhost:5432",
 };
 module.exports = env_vars;
