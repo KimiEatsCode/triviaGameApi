@@ -6,32 +6,21 @@ dotenv.config({ path: "./config.env" });
 // dotenv.config();
 
 const env_vars = {
-  // apiUrl: "https://codejeopardy-api-service-pjoy.vercel.app/"
-  apiUrl: "localhost:5432",
+  apiUrl: "https://codejeopardy-api-service-pjoy.vercel.app/"
+  // apiUrl: "localhost:5432",
 };
 module.exports = env_vars;
 
-// const config = {
-//   db: {
-//     /* don't expose password or any sensitive info, done only for demo */
-//     host: "127.0.0.1",
-//     user: "root",
-//     password: "root",
-//     database: "jeopardygame",
-//   },
-// };
-// module.exports = config;
-
 const pool = new Pool({
-  user: process.env.USERNAME,
-  host: process.env.HOST,
-  database: process.env.DATABASE,
-  password: process.env.PASSWORD,
-  port: process.env.PORT,
-  // connectionString: process.env.DBConfigLink,
-  // ssl: {
-  //   rejectUnauthorized: false,
-  // },
+  // user: process.env.USERNAME,
+  // host: process.env.HOST,
+  // database: process.env.DATABASE,
+  // password: process.env.PASSWORD,
+  // port: process.env.PORT,
+  connectionString: process.env.DBConfigLink,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 module.exports = pool;
