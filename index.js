@@ -6,7 +6,7 @@ dotenv.config();
 const morgan = require("morgan");
 let app = express();
 const pool = require("./config");
-const port = process.env.PORT;
+const node_env = process.env.NODE_ENV;
 const gameMethods = require("./services/gameMethods");
 const gameMethodsRouter = require("./routes/gameRoutes");
 
@@ -29,13 +29,14 @@ app.use(gameMethodsRouter.router5);
 app.use(gameMethodsRouter.router6);
 app.use(gameMethodsRouter.router7);
 app.use(gameMethodsRouter.router8);
+app.use(gameMethodsRouter.router9);
 
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`);
-// });
-app.listen(3000, () => {
-  console.log(`Example app listening at http://localhost:${3000}`);
+app.listen(port, () => {
+  console.log(`Example app is currently in ${node_env} environment`);
 });
+// app.listen(3000, () => {
+//   console.log(`Example app listening at http://localhost:${3000}`);
+// });
 
 if (process.env.NODE_ENV === "development") {
   //when go to an api url aka make a api request

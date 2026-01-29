@@ -11,19 +11,20 @@ const router5 = express.Router();
 const router6 = express.Router();
 const router7 = express.Router();
 const router8 = express.Router();
+const router9 = express.Router();
 
 const app = express();
 
 /* GET mySQL Connections */
-// router0.get("/api/checkSQLConnections", async function (req, res, next) {
-//   try {
-//     res.json(await gameMethods.checkSQLConnections());
-//   } catch (err) {
-//     console.error(`Error while getting checkSQL Connections `, err.message);
-//     next(err);
-//   }
-//   res.end();
-// });
+router0.get("/api/checkSQLConnections", async function (req, res, next) {
+  try {
+    res.json(await gameMethods.checkSQLConnections());
+  } catch (err) {
+    console.error(`Error while getting checkSQL Connections `, err.message);
+    next(err);
+  }
+  res.end();
+});
 
 /* GET game categories. */
 router1.get("/api/game-categories", async function (req, res, next) {
@@ -133,6 +134,18 @@ router8.get("/api/games", async function (req, res, next) {
   res.end();
 });
 
+/* GET all users */
+router9.get("/api/users", async function (req, res, next) {
+  try {
+    const data = await gameMethods.getUsers();
+    res.json(data.rows.rows);
+  } catch (err) {
+    console.error(`Error while getting users `, err.message);
+    next(err);
+  }
+  res.end();
+});
+
 module.exports = {
   router0,
   router1,
@@ -143,4 +156,5 @@ module.exports = {
   router6,
   router7,
   router8,
+  router9,
 };

@@ -39,7 +39,6 @@ async function getCategoryClues(catid) {
     rows,
   };
 }
-``;
 
 async function getAllClues() {
   console.log("clues received");
@@ -89,6 +88,14 @@ async function setScore(gameid, score) {
   };
 }
 
+async function getUsers() {
+  console.log("users received");
+  const rows = await pool.query(`SELECT * FROM users`);
+  return {
+    rows,
+  };
+}
+
 module.exports = {
   checkSQLConnections,
   getGameCategories,
@@ -99,4 +106,5 @@ module.exports = {
   resetClues,
   setScore,
   getAllClues,
+  getUsers,
 };
