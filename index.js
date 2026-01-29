@@ -31,7 +31,7 @@ app.use(gameMethodsRouter.router7);
 app.use(gameMethodsRouter.router8);
 app.use(gameMethodsRouter.router9);
 
-app.listen(port, () => {
+app.listen(node_env, () => {
   console.log(`Example app is currently in ${node_env} environment`);
 });
 // app.listen(3000, () => {
