@@ -12,11 +12,11 @@ const env_vars = {
 module.exports = env_vars;
 
 const pool = new Pool({
-  // user: process.env.USERNAME,
-  // host: process.env.HOST,
-  // database: process.env.DATABASE,
-  // password: process.env.PASSWORD,
-  // port: process.env.PORT,
+  user: process.env.USERNAME,
+  host: process.env.HOST,
+  database: process.env.DATABASE,
+  password: process.env.PASSWORD,
+  port: process.env.PORT,
   connectionString: process.env.connectionString,
   ssl: {
     rejectUnauthorized: false,
