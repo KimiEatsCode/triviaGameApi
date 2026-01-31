@@ -6,12 +6,15 @@ import { config } from 'dotenv'; config();
 //Use connection string for production
 //comment out LOCAL variables for production
 const client = new Client ({
-  connectionString: process.env.connectionString,
-  // user: process.env.LOCALUSER,
-  // host: process.env.LOCALHOST,
-  // database: process.env.LOCALDATABASE,
-  // password: process.env.LOCALPASSWORD,
-  // port: process.env.LOCALPORT,
+   connectionString: process.env.connectionString,
+  // user: process.env.DB_USER,
+  // host: process.env.DB_HOST,
+  // database: process.env.DB_NAME,
+  // password: process.env.DB_PASSWORD,
+  // port: process.env.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 client.connect();
